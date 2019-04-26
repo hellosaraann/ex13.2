@@ -1,4 +1,4 @@
-var baseURL = 'https://www.tronalddump.io/';
+var baseURL = 'https://api.tronalddump.io/random/quote';
 
 var vm = new Vue ({
   el: '#app',
@@ -7,7 +7,7 @@ var vm = new Vue ({
   },
   methods: {
     getSayings: function(){
-      axios.get(baseURL + '/quotes').then(function(response){
+      axios.get(baseURL).then(function(response){
         vm.dumbThings = response.data;
       })
     }
