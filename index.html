@@ -2,15 +2,13 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>Cat Facts</title>
   </head>
   <body>
+
     <div id='app'>
-      <div  v-for='dumbThing in dumbThings'
-            :key='dumbThing.id'>
-        <p>
-          {{dumbThing.quote}}
-        </p>
+      <div v-for='catFact in catFacts' :key='catFact._id'>
+        <p>{{catFact.text}}</p>
       </div>
     </div>
 

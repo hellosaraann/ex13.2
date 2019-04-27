@@ -1,18 +1,19 @@
-var baseURL = 'https://api.tronalddump.io';
+var baseURL = 'https://cat-fact.herokuapp.com';
 
 var vm = new Vue ({
   el: '#app',
   data: {
-    dumbThings: []
+    catFacts: []
   },
   methods: {
-    getSayings: function(){
-      axios.get(baseURL + "/search/quote?query={obama}/").then(function(response){
-        vm.dumbThings = response.data;
+    getCatFacts: function(){
+      axios.get(baseURL + '/facts').then(function(response){
+        console.log(response);
+        vm.catFacts = response.data;
       })
     }
   },
   created: function(){
-    this.getSayings();
+    this.getCatFacts();
   }
 });
